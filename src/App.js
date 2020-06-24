@@ -88,6 +88,9 @@ function App() {
     <div className="App">
       <div>
         <div style={{padding:8,display:"block",width:'100%'}}>
+          <div className={`box box-wide box-yellow`} style={{width:'100%'}}>Update 24/06/2020 - Fixed some bugs, and moved to a new web address</div>
+        </div>
+        <div style={{padding:8,display:"block",width:'100%'}}>
           <div className={`box box-wide box-aqua`} style={{width:'100%'}}>Update 27/03/2020 - Solved Groups now stay in order, text now shrinks to fit boxes</div>
         </div>
         <div style={{padding:8,display:"block",width:'100%'}}>
