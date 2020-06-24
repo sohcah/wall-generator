@@ -136,7 +136,7 @@ function App() {
                 Wall Generator by sohcah
               </div>
               <div style={{paddingRight:8,paddingTop:8,fontSize:'1.2em',display:"inline-block",width:"50%",textAlign:"right"}}>
-                https://wallgenerator.web.app
+                https://wall.sohcah.dev
               </div>
             </div>
         </div>
