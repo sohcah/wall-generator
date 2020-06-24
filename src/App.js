@@ -1,59 +1,10 @@
+/*eslint-disable eqeqeq, no-loop-func, no-redeclare */
 import React from 'react';
-import logo from './logo.svg';
-// import html2canvas from 'html2canvas'
 import domtoimage from 'dom-to-image';
 import { Textfit } from 'react-textfit';
-import { saveAs } from 'file-saver';
 import './App.css';
 
 function App() {
-  // var q = [
-  //   [
-  //     "Ends with first 3 letters of a month",
-  //     ["Concoct","Neymar","Trojan","Codec"],
-  //     true
-  //   ],
-  //   [
-  //     "Films starring Kristen Stewart",
-  //     ["Seberg","Equals","Jumper","Undertow"],
-  //     true
-  //   ],
-  //   [
-  //     "Birds",
-  //     ["Craven","Regret","Bandicoot","Stern"],
-  //     true
-  //   ],
-  //   [
-  //     "",
-  //     ["Twilight","Platypus","Garlic","Panther"],
-  //     false
-  //   ],
-  //   [
-  //     "",
-  //     ["Sunlight","Tiger","Vogue","Bat"],
-  //     false
-  //   ],
-  //   [
-  //     "",
-  //     ["Raider","Mammoth","Jungle","Wolf"],
-  //     false
-  //   ],
-  //   [
-  //     "",
-  //     ["Amazon","Showdown","Rhino","Diesel"],
-  //     false
-  //   ],
-  //   [
-  //     "",
-  //     ["Blade","Confusion","Red","Cat"],
-  //     false
-  //   ],
-  //   [
-  //     "",
-  //     ["Hat","Suntherland","Buffalo","Howl"],
-  //     false
-  //   ],
-  // ]
   function rndstr() {
     return Math.floor(Math.random()*10000)
   }
@@ -75,30 +26,7 @@ function App() {
     setSolvedX(x);
     localStorage.solved = x.join(',');
   }
-  var [canvas,setCanvas] = React.useState(null)
   var [grid6,set6] = React.useState(false);
-  // var q = [
-  //   [
-  //     "Square Numbers",
-  //     ["1","4","9","16"],
-  //     true
-  //   ],
-  //   [
-  //     "Odd Prime Numbers",
-  //     ["5","7","11","13"],
-  //     true
-  //   ],
-  //   [
-  //     "Triangle Numbers",
-  //     ["3","6","10","15"],
-  //     true
-  //   ],
-  //   [
-  //     <><strike style={{marginRight:'4px'}}>Even Numbers</strike> Subtract from 25 to get a prime</>,
-  //     ["2","8","12","14"],
-  //     true
-  //   ]
-  // ]
   var x = [];
   var i = 0;
   var colors = ["green","blue","pink","red","orange","purple","yellow","aqua","blue-2","black",null];
@@ -114,8 +42,6 @@ function App() {
       i++;
     }
   }
-  // for(var o of q.filter(i=>solved.includes(i[2].toString()))) {
-  // }
   function shuffle(a) {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -149,11 +75,7 @@ function App() {
       setSolved(solved.concat([id.toString()]));
     }
   }
-  // var screenshot;
   function screenshot() {
-    // html2canvas(document.getElementById('screenshot')).then(function(canvas) {
-    //   document.body.appendChild(canvas);
-    // });
     domtoimage.toBlob(document.getElementById('screenshot'))
       .then(function (blob) {
           window.saveAs(blob, 'wall.png');
@@ -162,16 +84,6 @@ function App() {
           console.error('oops, something went wrong!', error);
       });
   }
-  // var x = [
-  //   ["green","Celestella","Treasure Island","Topaz","Kaa"],
-  //   ["green","Description of Category"],
-  //   ["blue","Bubble","Marnie","Rebecca","Lifeboat"],
-  //   ["blue","Description of Category"],
-  //   ["red","Spellbound","Cellophane","Rope","Ekans"],
-  //   ["red","Description of Category"],
-  //   ["pink","Some","Unsolved","Stuff","Fantastic"],
-  //   ["pink","Description of Category"]
-  // ]
   return (
     <div className="App">
       <div>
