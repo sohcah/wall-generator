@@ -89,7 +89,7 @@ function App() {
       <div>
         <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
           <div style={{padding:8,flexGrow:1,width:400}}>
-            <div className={`box box-wide box-blue`} style={{width:'100%'}}>Update 28/12/2020 - Added a <span role="img" aria-label="moon emoji">🌑</span> dark mode</div>
+            <div className={`box box-wide box-blue`} style={{width:'100%'}}><span>Update 28/12/2020 - Added a <span role="img" aria-label="moon emoji">🌑</span> dark mode</span></div>
           </div>
           <div style={{padding:8,flexGrow:1,width:400}}>
             <div className={`box box-wide box-yellow`} style={{width:'100%'}}>Update 24/06/2020 - Fixed some bugs, and moved to a new web address</div>
