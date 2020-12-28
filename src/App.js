@@ -1,7 +1,7 @@
 /*eslint-disable eqeqeq, no-loop-func, no-redeclare */
 import React from 'react';
 import domtoimage from 'dom-to-image';
-import { Textfit } from 'react-textfit';
+import Textfit from 'react-textfit';
 import './App.css';
 
 function App() {
@@ -87,14 +87,19 @@ function App() {
   return (
     <div className="App">
       <div>
-        <div style={{padding:8,display:"block",width:'100%'}}>
-          <div className={`box box-wide box-yellow`} style={{width:'100%'}}>Update 24/06/2020 - Fixed some bugs, and moved to a new web address</div>
-        </div>
-        <div style={{padding:8,display:"block",width:'100%'}}>
-          <div className={`box box-wide box-aqua`} style={{width:'100%'}}>Update 27/03/2020 - Solved Groups now stay in order, text now shrinks to fit boxes</div>
-        </div>
-        <div style={{padding:8,display:"block",width:'100%'}}>
-          <div className={`box box-wide box-green`} style={{width:'100%'}}>Update 13/02/2020 - Added 6x6 Grid option, added support for 4x10 and 4x11 and Bug Fixes</div>
+        <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
+          <div style={{padding:8,flexGrow:1,width:400}}>
+            <div className={`box box-wide box-blue`} style={{width:'100%'}}>Update 28/12/2020 - Added a <span role="img" aria-label="moon emoji">🌑</span> dark mode</div>
+          </div>
+          <div style={{padding:8,flexGrow:1,width:400}}>
+            <div className={`box box-wide box-yellow`} style={{width:'100%'}}>Update 24/06/2020 - Fixed some bugs, and moved to a new web address</div>
+          </div>
+          <div style={{padding:8,flexGrow:1,width:400}}>
+            <div className={`box box-wide box-aqua`} style={{width:'100%'}}>Update 27/03/2020 - Solved Groups now stay in order, text now shrinks to fit boxes</div>
+          </div>
+          <div style={{padding:8,flexGrow:1,width:400}}>
+            <div className={`box box-wide box-green`} style={{width:'100%'}}>Update 13/02/2020 - Added 6x6 Grid option, added support for 4x10 and 4x11 and Bug Fixes</div>
+          </div>
         </div>
         {q.map((a,i)=><div className="border">
           <div style={{width:'100%'}}>
@@ -114,8 +119,8 @@ function App() {
           Math.floor(Math.random()*200000).toString(36)
         ]]))}>Add Group</button><br/>
         6x6 Grid Style? <input type="checkbox" onChange={(ev)=>set6(ev.target.checked)} checked={grid6}/><br/>
-        <button style={{border:"1px solid red",color:"red"}} onClick={()=>setQ([])}>Reset Wall</button><br/>
-        <button style={{border:"1px solid green",color:"green"}} onClick={()=>setShown(shown+1)}>Generate Wall</button><br/>
+        <button class="redbutton" onClick={()=>setQ([])}>Reset Wall</button><br/>
+        <button class="greenbutton" onClick={()=>setShown(shown+1)}>Generate Wall</button><br/>
         {!!shown&&screenshot&&<button style={{border:"1px solid green",color:"green"}} onClick={screenshot}>Take Screenshot</button>}
       </div>
       {!!shown&&<div id="screenshot" style={{display:'inline-block'}}>
@@ -126,7 +131,7 @@ function App() {
             </div>)}
           </div>)}
         </div>
-        <div style={{backgroundColor:'#aaa',width:grid6?1028:(166*q.length)+32,padding:16,paddingTop:0,display:"flex",flexDirection:"row",flexWrap:"wrap"}}>
+        <div class="grid" style={{backgroundColor:'#aaa',width:grid6?1028:(166*q.length)+32,padding:16,paddingTop:0,display:"flex",flexDirection:"row",flexWrap:"wrap"}}>
           {solutions.map((i,index)=>
               <div style={{padding:8,display:"inline-block",width:`${q.length<9?100/2:100/3}%`}}>
                 <Textfit max={28} mode="multi"><div className={`box box-wide box-${colors[index]}`} style={{width:'100%'}}>{i}</div></Textfit>
