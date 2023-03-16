@@ -2,6 +2,7 @@
 import React from 'react';
 import domtoimage from 'dom-to-image';
 import Textfit from 'react-textfit';
+import {saveAs} from "file-saver";
 import './App.css';
 
 function App() {
@@ -78,18 +79,22 @@ function App() {
   function screenshot() {
     domtoimage.toBlob(document.getElementById('screenshot'))
       .then(function (blob) {
-          window.saveAs(blob, 'wall.png');
+        saveAs(blob, 'wall.png');
       })
       .catch(function (error) {
-          console.error('oops, something went wrong!', error);
+        alert(`Oops, something went wrong! ${error}`);
       });
   }
   return (
     <div className="App">
       <div>
         <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
-          <div style={{padding:8,flexGrow:1,width:400}}>
-            <div className={`box box-wide box-blue`} style={{width:'100%'}}><span>Update 28/12/2020 - Added a <span role="img" aria-label="moon emoji">🌑</span> dark mode</span></div>
+          <div style={{padding: 8, flexGrow: 1, width: 400}}>
+            <div className={`box box-wide box-purple`} style={{width: '100%'}}><span>Update 16/03/2023 - Fixed the Take Screenshot button</span></div>
+          </div>
+          <div style={{padding: 8, flexGrow: 1, width: 400}}>
+            <div className={`box box-wide box-blue`} style={{width: '100%'}}><span>Update 28/12/2020 - Added a <span
+                role="img" aria-label="moon emoji">🌑</span> dark mode</span></div>
           </div>
           <div style={{padding:8,flexGrow:1,width:400}}>
             <div className={`box box-wide box-yellow`} style={{width:'100%'}}>Update 24/06/2020 - Fixed some bugs, and moved to a new web address</div>
